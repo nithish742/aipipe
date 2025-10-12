@@ -1,0 +1,3 @@
+const response = await fetch(`https://api.github.com/repos/${user}/${repoName}`);
+const data = await response.json();
+return data.created_at;
