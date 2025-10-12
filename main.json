@@ -1,0 +1,1 @@
+cat input.json | jq -r '[.[] | to_entries | map(.value) | @csv] | .[0] as $header | .[1:] | map($header, .) | map(@csv) | .[0] | @csv' | llm 'Convert this CSV to a markdown table'
